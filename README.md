@@ -107,3 +107,64 @@ Herschrijf oefening 1 en 4 met `async/await` in plaats van `.then()` en `.catch(
 Kopieer opnieuw eerst je eerdere oplossingen naar de map voor deze oefening en doe dan de nodige aanpassingen.
 
 Zorg dat je gebruik maakt van `try`/`catch` om fouten correct op te vangen bij `await`.
+
+
+## Extra oefeningen
+
+### Oefening 1 – Een simpele Promise maken
+#### Leerdoelen
+- Je leert hoe je zelf een Promise maakt en hoe je `resolve` en `reject` gebruikt.  
+#### Opdracht 
+We maken een functie die nagaat of er genoeg donuts in een doos zitten alvorens ze worden meegegeven aan de klant. Een doos kan 12 donuts bevatten.  
+1. Maak een functie `checkDonutStock()` die een Promise teruggeeft.  
+2. De Promise moet na 2 seconden *resolven* met de boodschap *"Enough donuts for Homer!"* wanneer er genoeg (>= 5) donuts in de doos zitten. 
+3. Wanneer er minder dan 5 donuts zijn, moet de Promise *rejecten* met de boodschap *"Oh no! Not enough donuts!"*.  
+4. Gebruik `.then()` en `.catch()` om het resultaat te tonen in de console.
+
+### Oefening 2 – Promise chaining
+#### Leerdoelen
+- Je leert hoe je meerdere Promises aan elkaar koppelt.  
+#### Opdracht  
+1. Maak een functie `getBartHomework()`, die na 1 seconde een Promise resolved met de boodschap "Math homework".  
+2. Maak een tweede functie `finishHomework(homework)` die na 1 seconde resolve met de boodschap `"Bart finished: <homework>"`, waarbij `<homework>` de boodschap bevat uit `getBartHomework()`.  
+3. Chain deze functies zodat Bart eerst zijn huiswerk ophaalt en vervolgens afwerkt.  
+4. Toon het resultaat in de console.
+
+
+### Oefening 3 – Callback hell herschrijven naar Promises
+#### Leerdoelen
+- Inzien hoe Promises callback hell oplossen.  
+#### Opdracht
+1. Je krijgt een callback-hell voorbeeld (vereenvoudigd).  
+2. Herschrijf het naar Promises.
+
+**Startcode (callback hell):**
+```js
+getKrustyBurgerOrder(function(order) {
+  prepareOrder(order, function(prepared) {
+    deliverOrder(prepared, function(delivered) {
+      console.log(delivered);
+    });
+  });
+});
+```
+
+### Oefening 4 – Werken met `Promise.all`
+#### Leerdoelen
+- Je leert hoe je meerdere beloftes parallel uitvoert.  
+#### Opdracht
+1. Maak drie functies:  
+   - `getLisaBook()` → resolve na 1.2s met boodschap *"Lisa's book"* 
+   - `getMaggieBottle()` → resolve na 0.5s  met boodschap *Maggie's bottle*
+   - `getMargeGroceries()` → resolve na 1.8s  met boodschap *Marge's groceries*
+2. Gebruik `Promise.all` om te wachten tot alles binnen is.  
+3. Toon het resultaat als array in de console.
+
+
+### Oefening 5 – Async/Await herschrijven
+#### Leerdoelen
+- Snappen hoe async/await Promises leesbaarder maakt.  
+#### Opdracht
+1. Herschrijf de code van oefening 2 naar async/await.  
+2. Toon het resultaat in de console.  
+3. Gebruik een try/catch blok om fouten af te handelen.
